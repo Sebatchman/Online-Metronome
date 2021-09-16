@@ -16,6 +16,10 @@ let isPaused = true;
 let isRunning = false;
 let beatsPerMeasure = 4;
 let count = 0;
+let buttonXOnMouseDown = 0;
+let dragValue = null;
+let buttonLeftOffset = 0;
+let didDrag = false;
 
 function Timer(callback, timeInterval, options) {
 	this.timeInterval = timeInterval;
@@ -47,19 +51,54 @@ function Timer(callback, timeInterval, options) {
 	}
 }
 
+const pausedState = () => {
+	if (didDrag == true) {
+		isPaused = false;
+		isRunning = true;
+	} else if (didDrag == false) {
+		isPaused = true;
+		isRunning = false;
+	}
+	didDrag = false;
+}
+
+const dragButton = (id) => {
+	button.style.position = 'relative';
+	button.onmousedown = function(e) {
+		dragValue = button;
+		buttonXOnMouseDown = e.pageX;
+		buttonLeftOffset = Number(dragValue.style.left.split('px')[0]);
+	}
+}
+document.onmouseup = function(e) {
+	dragValue = null;
+}
+document.onmousemove = function(e) {
+	if (dragValue == null) {
+		return;
+	}
+	let x = e.pageX;
+	let delta = x - buttonXOnMouseDown;
+	dragValue.style.left = (buttonLeftOffset + delta) + 'px';
+	didDrag = true;
+	pausedState();
+}
+
 plusBPMes.addEventListener('click', () => {
 	console.log('plus');
-	if (beatsPerMeasure >= 12) { 
-	return beatsPerMeasure++;
+	if (beatsPerMeasure <= 11) { 
+	beatsPerMeasure++;
 	inputMes.textContent = beatsPerMeasure;
+	count = 0;
 	}
 }) 
 
 minusBPMes.addEventListener('click', () => {
 	console.log('minus');
-	if (beatsPerMeasure <= 2) { 
-	return  beatsPerMeasure--;
+	if (beatsPerMeasure >= 3) { 
+	beatsPerMeasure--;
 	inputMes.textContent = beatsPerMeasure;
+	count = 0;
 	}
 }) 
 
@@ -141,8 +180,10 @@ function playClick() {
 	}
 	if (count === 0) {
 		click2.play();
+		click2.currentTime = 0;
 	} else {
 		click1.play();
+		click1.currentTime = 0;
 	}
 	count++;
 }

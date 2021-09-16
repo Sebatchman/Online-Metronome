@@ -35,8 +35,6 @@ hr {
 	border-radius: 30px;
 	position: relative;
 	bottom: 20px;
-	left: 0;
-
 }
 
 #leftBtn {
@@ -114,6 +112,10 @@ h3 {
 	position: absolute;
 	right: 650px;
 	bottom: 148px;
+}
+
+.icon {
+	pointer-events: none;
 }
 
 
