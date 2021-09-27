@@ -2,29 +2,84 @@
 <html>
 <link rel="stylesheet" type="text/css" href="style.css">
 <head>
-	<title>Metronome</title>
-	<h1 class="title">Online Metronome</h1>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gluten:wght@200&display=swap" rel="stylesheet">
+	<title>Metro-Beat</title>
 </head>
 <body onload="dragButton('btn')">
+	<div class="body-container">
 	<div class="main">
+		<section>
+			<div class="title">
+				<h1>
+					<span>M</span>
+					<span>e</span>
+					<span>t</span>
+					<span>r</span>
+					<span>o</span>
+					<span>n</span>
+					<span>o</span>
+					<span>m</span>
+					<span>e</span>
+				</h1>
+				<div class="author">By Sebastian Rechtman</div>
+			</div>
+		</section>
+		<div class="wrapper">
+			<div class="box">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
 		<h1 class="title2">Try Me:</h1>
-			<div class="space2"></div>
-				<h3>BPM</h3>
-				<input class="bpm" type="text" value="180">
-				<div class="space"></div>
-			<div class="container">
-				<hr>
-			<button class="btn"><img class='icon' src='play-icon.png'/></button>
-	</div>
-		<button id="rightBtn">+</button>
-		<button id="leftBtn">-</button>
-	<div class="bottom-wrapper">
-		<button class="minus-bpMes">-</button>
-		<div class='bpMes'>4</div>
-		<button class="plus-bpMes">+</button>
-		<p>Beats Per Measure</p>
-	</div>
-	</div>
+		<div class="bpm">
+			<input id='tempo' type="text" value="180"></input>
+			<h3>BPM</h3>
+		</div>
+		<div class="tempo-settings">
+			<button id="leftBtn">
+			<img class='minus-icon' 
+			width="30px" 
+			height="30px" 
+			src="minus.png"></button>
+			<div class='playContainer'>
+				<div class='playTrack'></div>
+				<button id='playBtn' class="btn">
+					<img id='play-button-icon' class='button' src="play-icon.png" />
+				</button>
+			</div>
+			<button id="rightBtn">
+			<img class='add-icon' 
+			width='30px' 
+			height='30px'
+			src="add.png"></button>
+		</div>
+		<div>
+			<div class="measures">
+				<button class="minus-bpMes">-</button>
+				<div class='bpMes'>4</div>
+				<button class="plus-bpMes">+</button>
+			</div>
+			<div class='beats-per-measure-text'>Beats Per Measure</div>
+		</div>
+		
+			<img class='small-tree1' src="tree.png" height="400px" width="400px">
+			<img class='small-tree2' src="tree.png" height="400px" width="400px">
+			<img class='coconut1' src="coconut.png" width='45px' height='55px'>
+			<img class='image-tree1' src="tree.png" height="600px" width="400px">
+			<img class='coconut2' src="coconut.png" width="45px" height='55px'>
+			<img class='image-tree2' src="tree.png" height="600px" width="400px">
+		</div>
+</div>
 </body>
 <script type="text/javascript" src="script.js"></script>
 </html>
