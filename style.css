@@ -208,8 +208,9 @@ body {
 	font-size: 3em;
 	background: none;
 	border: none;
-	width: 70px;
+	width: 75px;
 	font-family: 'Gluten', cursive;
+	padding-right: 10px;
 }
 
 .bpm h3{
@@ -333,45 +334,50 @@ hr {
 	font-size: 1em;
 }
 
+.background-image-tree {
+	display: flex;
+}
+
 .image-tree1 {
 	position: absolute;
-	left: 10px;
-	bottom: 0px;
+	left: 1%;
+	bottom: 0%;
 	z-index: -1;
 }
 
 .image-tree2 {
 	position: absolute;
-	right: 10px;
-	bottom: 0px;
+	right: 1%;
+	bottom: 0%;
 	z-index: -1;
 	transform: scaleX(-1);
 }
 
 .small-tree1 {
 	position: absolute;
-	left: -30px;
-	bottom: 0px;
+	left: -2%;
+	bottom: 0%;
 	z-index: -1;
 	margin-bottom: 0px;
 }
 
 .small-tree2 {
 	position: absolute;
-	right: 0px;
-	bottom: 0px;
+	right: 0%;
+	bottom: 0%;
 	z-index: -1;
 	transform: scaleX(-1);
 }
 
 .coconut1 {
 	position: absolute;
-	left: 160px;
-	bottom: 413px;
+	left: 12%;
+	bottom: 63%;
 }
 
 .coconut2 {
 	position: absolute;
-	right: 160px;
-	bottom: 413px;
+	right: 12%;
+	bottom: 63%;
 }
+
